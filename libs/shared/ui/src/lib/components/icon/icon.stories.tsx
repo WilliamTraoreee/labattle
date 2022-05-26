@@ -42,8 +42,12 @@ const remixiconContainer = (
     <h2 className="font-bold text-center w-full mb-4">Remixicon Icons</h2>
     <div className="flex gap-2 justify-center flex-wrap">
       {remixiconList.map((icon, index) => (
-        <span onClick={() => copyName(icon)} className="cursor-pointer">
-          <Icon name={icon} key={index} />
+        <span
+          key={index}
+          onClick={() => copyName(icon)}
+          className="cursor-pointer"
+        >
+          <Icon name={icon} />
         </span>
       ))}
     </div>
@@ -55,8 +59,12 @@ const svgContainer = (
     <h2 className="font-bold text-center w-full mb-4">SVG Icons</h2>
     <div className="flex gap-2 justify-center flex-wrap">
       {svgList.map((icon, index) => (
-        <span onClick={() => copyName(icon)} className="cursor-pointer">
-          <Icon name={icon} key={index} />
+        <span
+          key={index}
+          onClick={() => copyName(icon)}
+          className="cursor-pointer"
+        >
+          <Icon name={icon} />
         </span>
       ))}
     </div>
