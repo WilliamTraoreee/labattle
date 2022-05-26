@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 // Base
-@import './base/fonts.scss';
+@import './base/fonts';
+
+// Components
+@import './components/select';
 
 body {
   font-family: 'Source Sans Pro', Helvetica, sans-serif;

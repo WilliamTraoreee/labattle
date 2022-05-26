@@ -1,11 +1,80 @@
-/* eslint-disable-next-line */
-export interface SelectProps {}
+import {
+  ListboxOption,
+  ListboxButton,
+  ListboxPopover,
+  ListboxInput,
+  ListboxList,
+} from '@reach/listbox';
+import { useState } from 'react';
+import Icon, { IconSVG } from '../../icon/icon';
+
+export type SelectOptionProps = {
+  label: string;
+  value: string;
+  icon?: string | IconSVG;
+};
+
+export type SelectProps = {
+  className?: string;
+  options: SelectOptionProps[];
+  defaultValue?: string;
+  success?: boolean;
+  error?: boolean;
+};
 
 export function Select(props: SelectProps) {
+  const {
+    className,
+    options,
+    defaultValue,
+    error = false,
+    success = false,
+  } = props;
+
+  const [value, setValue] = useState(
+    defaultValue ? defaultValue : options[0].value
+  );
+
+  const optionLabel = options.find((o) => o.value === value)?.label;
+  const optionIcon = options.find((o) => o.value === value)?.icon
+    ? options.find((o) => o.value === value)?.icon
+    : '';
+
+  const defineSuccess = success ? 'select--success' : '';
+  const defineError = error ? 'select--error' : '';
+
   return (
-    <div>
-      <h1>Welcome to Select!</h1>
-    </div>
+    <ListboxInput className={`${defineSuccess} ${defineError} ${className}`}>
+      <ListboxButton>
+        <div className="flex items-center gap-2 h-full">
+          {optionIcon && <Icon name={optionIcon} />}
+          {optionLabel}
+        </div>
+        <Icon
+          name="arrow-down-s-line"
+          className="select--arrow text-light-800 transition duration-300 ease-out"
+        />
+      </ListboxButton>
+      <ListboxPopover>
+        <ListboxList>
+          {options.map((option: SelectOptionProps, index: number) => (
+            <ListboxOption
+              key={index}
+              value={option.value}
+              onClick={() => setValue(option.value)}
+            >
+              <div className="flex items-center gap-2">
+                {option.icon && <Icon name={option.icon} />}
+                {option.label}
+              </div>
+              {value === option.value && (
+                <Icon name="check-line" className="text-primary-500" />
+              )}
+            </ListboxOption>
+          ))}
+        </ListboxList>
+      </ListboxPopover>
+    </ListboxInput>
   );
 }
 
