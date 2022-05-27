@@ -7,6 +7,10 @@
 
   li {
     @apply text-white h-10 inline-flex items-center gap-2 hover:bg-dark-700 rounded-sm px-3 w-full cursor-pointer justify-between;
+
+    &[aria-disabled='true'] {
+      @apply bg-dark-500 text-light-500 hover:bg-dark-500;
+    }
   }
 }
 
@@ -32,4 +36,7 @@
   .select--arrow {
     transform: rotate(180deg);
   }
+}
+
+.select__item--disabled {
 }

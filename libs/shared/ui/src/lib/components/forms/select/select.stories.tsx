@@ -18,6 +18,7 @@ Primary.args = {
     {
       label: 'Test 2',
       value: 'test2',
+      disabled: true,
     },
     {
       label: 'Test 3',
@@ -25,5 +26,4 @@ Primary.args = {
       icon: 'vidicon-line',
     },
   ],
-  disabled: true,
 };
