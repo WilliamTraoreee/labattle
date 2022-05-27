@@ -12,4 +12,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   label: 'Checkbox',
   id: 'checkbox',
+  disabled: true,
 };

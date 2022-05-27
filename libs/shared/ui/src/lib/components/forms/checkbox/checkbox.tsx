@@ -7,8 +7,12 @@ export function Checkbox(props: CheckboxProps) {
   const { label, className = '', ...otherProps } = props;
 
   return (
-    <div className={`checkbox ${className}`}>
-      <input type="checkbox" id={otherProps.id} />
+    <div
+      className={`checkbox ${
+        otherProps?.disabled ? 'checkbox--disabled' : ''
+      } ${className}`}
+    >
+      <input type="checkbox" {...otherProps} />
       <label htmlFor={otherProps.id}>
         <span className="checkbox__check"></span>
         {label}
