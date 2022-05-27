@@ -1,0 +1,19 @@
+.checkbox-button {
+  label {
+    @apply inline-flex h-8 border border-dark-300 px-3 items-center rounded gap-2 text-white text-xs transition duration-200 cursor-pointer;
+  }
+
+  input {
+    @apply hidden;
+
+    &:checked + label {
+      @apply bg-primary-500 border-primary-500;
+    }
+  }
+
+  &--disabled {
+    label {
+      @apply text-light-500 bg-dark-400;
+    }
+  }
+}

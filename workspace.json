@@ -4,6 +4,7 @@
   "projects": {
     "front": "apps/front",
     "front-e2e": "apps/front-e2e",
+    "shared-interface": "libs/shared/interface",
     "shared-ui": "libs/shared/ui",
     "strapi": "apps/strapi"
   }

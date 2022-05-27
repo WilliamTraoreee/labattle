@@ -1,3 +1,4 @@
+import { Option } from '@la-battle/shared/interface';
 import {
   ListboxOption,
   ListboxButton,
@@ -6,17 +7,11 @@ import {
   ListboxList,
 } from '@reach/listbox';
 import { useState } from 'react';
-import Icon, { IconSVG } from '../../icon/icon';
-
-export type SelectOptionProps = {
-  label: string;
-  value: string;
-  icon?: string | IconSVG;
-};
+import Icon from '../../icon/icon';
 
 export type SelectProps = {
   className?: string;
-  options: SelectOptionProps[];
+  options: Option[];
   defaultValue?: string;
   success?: boolean;
   error?: boolean;
@@ -63,11 +58,12 @@ export function Select(props: SelectProps) {
       </ListboxButton>
       <ListboxPopover>
         <ListboxList>
-          {options.map((option: SelectOptionProps, index: number) => (
+          {options.map((option: Option, index: number) => (
             <ListboxOption
               key={index}
               value={option.value}
               onClick={() => setValue(option.value)}
+              disabled={option?.disabled}
             >
               <div className="flex items-center gap-2">
                 {option.icon && <Icon name={option.icon} />}

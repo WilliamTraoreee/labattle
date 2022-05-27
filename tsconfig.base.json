@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@la-battle/shared/interface": ["libs/shared/interface/src/index.ts"],
       "@la-battle/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
