@@ -22,6 +22,12 @@
   }
 }
 
+.select--disabled {
+  [data-reach-listbox-button] {
+    @apply bg-dark-400 text-light-500 hover:border-dark-300 focus:border-dark-300;
+  }
+}
+
 [data-state='expanded'] {
   .select--arrow {
     transform: rotate(180deg);

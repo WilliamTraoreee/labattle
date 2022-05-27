@@ -20,6 +20,7 @@ export type SelectProps = {
   defaultValue?: string;
   success?: boolean;
   error?: boolean;
+  disabled?: boolean;
 };
 
 export function Select(props: SelectProps) {
@@ -29,6 +30,7 @@ export function Select(props: SelectProps) {
     defaultValue,
     error = false,
     success = false,
+    disabled = false,
   } = props;
 
   const [value, setValue] = useState(
@@ -42,9 +44,13 @@ export function Select(props: SelectProps) {
 
   const defineSuccess = success ? 'select--success' : '';
   const defineError = error ? 'select--error' : '';
+  const defineDisable = disabled ? 'select--disabled' : '';
 
   return (
-    <ListboxInput className={`${defineSuccess} ${defineError} ${className}`}>
+    <ListboxInput
+      className={`${defineSuccess} ${defineError} ${defineDisable} ${className}`}
+      disabled={disabled}
+    >
       <ListboxButton>
         <div className="flex items-center gap-2 h-full">
           {optionIcon && <Icon name={optionIcon} />}

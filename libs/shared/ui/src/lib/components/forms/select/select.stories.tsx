@@ -25,4 +25,5 @@ Primary.args = {
       icon: 'vidicon-line',
     },
   ],
+  disabled: true,
 };
