@@ -1,0 +1,30 @@
+.checkbox {
+  @apply flex items-center gap-3;
+
+  label {
+    @apply text-white flex items-center gap-3;
+  }
+
+  &__check {
+    @apply w-4 h-4 rounded border border-dark-300 block relative transition duration-200;
+
+    &:after {
+      content: '';
+      @apply block w-2.5 h-2.5 rounded-sm bg-primary-200 absolute top-0.5 left-0.5 transition duration-200 opacity-0;
+    }
+  }
+
+  input {
+    @apply hidden;
+
+    &:checked + label {
+      .checkbox__check {
+        @apply border-primary-200;
+
+        &:after {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+}
