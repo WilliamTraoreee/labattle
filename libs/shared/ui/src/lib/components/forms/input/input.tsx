@@ -22,7 +22,7 @@ export function Input(props: InputProps) {
     ? '!bg-dark-400 !text-light-500 hover:!border-dark-300'
     : '';
 
-  const defineClassName = `border-dark-300 inline-flex h-12  text-white bg-transparent rounded border outline-0 hover:border-primary-300 focus:border-primary-500 transition duration-300 w-full ${
+  const defineClassName = `border-dark-300 inline-flex h-10 text-white bg-transparent rounded border outline-0 hover:border-primary-300 focus:border-primary-500 transition duration-300 w-full ${
     icon ? 'pl-10 pr-4' : 'px-4'
   } ${defineError} ${defineSuccess} ${defineDisable} ${className}`;
 
