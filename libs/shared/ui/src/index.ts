@@ -1,3 +1,4 @@
+export * from './lib/components/forms/date-time/date-time';
 export * from './lib/components/forms/switch/switch';
 export * from './lib/components/forms/radio/radio';
 export * from './lib/components/forms/checkbox/checkbox';

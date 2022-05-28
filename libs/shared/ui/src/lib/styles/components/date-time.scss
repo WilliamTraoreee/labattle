@@ -1,0 +1,97 @@
+.react-datetime-picker {
+  @apply w-full;
+
+  .react-datetime-picker__wrapper {
+    @apply h-10 px-3 rounded border border-dark-300 text-white;
+  }
+
+  input {
+    border: none !important;
+    outline: none !important;
+  }
+}
+
+.react-calendar {
+  border: none !important;
+  background: transparent !important;
+  @apply mt-2 rounded bg-transparent overflow-hidden;
+
+  .react-calendar__navigation {
+    @apply bg-dark-700 text-white border-0 border-b border-dark-500 mb-0 py-2;
+
+    button {
+      cursor: pointer;
+      background: transparent !important;
+
+      &:hover {
+        background: transparent !important;
+      }
+    }
+  }
+
+  .react-calendar__month-view__weekdays {
+    @apply bg-dark-700 text-white border-0 border-b border-dark-500 mb-0 font-medium;
+
+    abbr {
+      @apply no-underline text-xxs;
+    }
+  }
+
+  .react-calendar__month-view__days {
+    @apply bg-dark-600;
+
+    button {
+      @apply p-1;
+
+      abbr {
+        @apply text-white text-xs w-full h-8 flex items-center justify-center rounded;
+      }
+
+      &.react-calendar__month-view__days__day--neighboringMonth {
+        abbr {
+          @apply text-dark-100;
+        }
+      }
+
+      &.react-calendar__tile--now {
+        @apply bg-transparent;
+
+        abbr {
+          @apply border border-dark-300;
+        }
+      }
+
+      &.react-calendar__tile--active {
+        @apply bg-transparent;
+
+        abbr {
+          @apply bg-primary-500 text-white;
+        }
+      }
+
+      &.react-calendar__tile:disabled {
+        @apply bg-transparent;
+
+        abbr {
+          @apply bg-dark-500 text-light-500;
+        }
+      }
+
+      &:hover {
+        @apply bg-dark-600;
+
+        abbr {
+          @apply bg-dark-400;
+        }
+      }
+    }
+  }
+}
+
+.react-datetime-picker--disabled {
+  background: transparent !important;
+
+  .react-datetime-picker__wrapper {
+    @apply bg-dark-400 text-light-500;
+  }
+}
