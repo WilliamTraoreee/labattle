@@ -1,0 +1,36 @@
+.radio {
+  @apply flex items-center gap-3;
+
+  label {
+    @apply text-white flex items-center gap-3;
+  }
+
+  &__check {
+    @apply w-4 h-4 rounded-full border border-dark-300 block relative transition duration-200;
+
+    &:after {
+      content: '';
+      @apply block w-2.5 h-2.5 rounded-full bg-primary-200 absolute top-0.5 left-0.5 transition duration-200 opacity-0;
+    }
+  }
+
+  input {
+    @apply hidden;
+
+    &:checked + label {
+      .radio__check {
+        @apply border-primary-200;
+
+        &:after {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    label {
+      @apply text-light-700;
+    }
+  }
+}

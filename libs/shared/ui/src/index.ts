@@ -1,3 +1,4 @@
+export * from './lib/components/forms/radio/radio';
 export * from './lib/components/forms/checkbox/checkbox';
 export * from './lib/components/forms/checkbox-button/checkbox-button';
 export * from './lib/components/forms/select/select';
