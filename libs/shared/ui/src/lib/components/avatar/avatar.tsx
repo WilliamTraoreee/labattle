@@ -11,6 +11,11 @@ export interface AvatarProps {
 export function Avatar(props: AvatarProps) {
   const { src, pseudo, size = 64, link, className = '' } = props;
 
+  const pseudoSize = (size: number) => {
+    if (size < 32) return 'text-xxs';
+    else return 'text-xs';
+  };
+
   const contentAvatar = () => {
     if (src) {
       return (
@@ -26,8 +31,13 @@ export function Avatar(props: AvatarProps) {
     } else {
       return (
         <div
-          style={{ width: size, height: size, borderRadius: size / 3 }}
-          className={`bg-dark-400 text-white text-xs items-center justify-center flex ${className}`}
+          style={{
+            width: size,
+            height: size,
+            borderRadius: size / 3,
+            fontSize: size / 3 + 'px',
+          }}
+          className={`bg-dark-400 text-white items-center justify-center flex ${className}`}
         >
           {pseudo?.slice(0, 2)}
         </div>
