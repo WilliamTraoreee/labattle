@@ -6,6 +6,8 @@ import { Route, Routes, Link } from 'react-router-dom';
 
 import { SharedInterface } from '@la-battle/shared/interface';
 
+import { SharedEnum } from '@la-battle/shared/enum';
+
 export function App() {
   return (
     <>
@@ -22,6 +24,9 @@ export function App() {
         <ul>
           <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/enum">SharedEnum</Link>
           </li>
           <li>
             <Link to="/interface">SharedInterface</Link>
@@ -41,6 +46,7 @@ export function App() {
             </div>
           }
         />
+        <Route path="/enum" element={<SharedEnum />} />
         <Route path="/interface" element={<SharedInterface />} />
         <Route
           path="/page-2"
