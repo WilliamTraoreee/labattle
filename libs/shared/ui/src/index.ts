@@ -1,3 +1,4 @@
+export * from './lib/components/avatar/avatar';
 export * from './lib/components/tag-status/tag-status';
 export * from './lib/components/tag/tag';
 export * from './lib/components/forms/date-time/date-time';
