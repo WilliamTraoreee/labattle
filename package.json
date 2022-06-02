@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@radix-ui/react-tooltip": "^0.1.7",
     "@reach/listbox": "^0.17.0",
     "@types/react-datetime-picker": "^3.4.1",
     "autoprefixer": "^10.4.7",
