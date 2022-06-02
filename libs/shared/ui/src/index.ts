@@ -1,3 +1,4 @@
+export * from './lib/components/modal/modal';
 export * from './lib/components/tooltip/tooltip';
 export * from './lib/components/avatar/avatar';
 export * from './lib/components/tag-status/tag-status';
