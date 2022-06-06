@@ -11,7 +11,9 @@
 @import './components/checkbox';
 @import './components/radio';
 @import './components/date-time';
+@import './components/modal';
 
 body {
   font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  min-height: 100vh;
 }

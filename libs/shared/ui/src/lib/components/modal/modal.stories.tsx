@@ -17,4 +17,10 @@ export const Primary = Template.bind({});
 Primary.args = {
   content: content,
   trigger: trigger,
+  title: 'Titre de dingue',
+  closeButton: 'Annuler',
+  actionButton: {
+    action: () => console.log('ok'),
+    text: 'Valider',
+  },
 };
